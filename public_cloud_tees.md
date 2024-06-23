@@ -4,10 +4,10 @@ _Note: the explainer is posted in the Protected Auction repository, but applies 
 
 ---
 
-* [Overview](overview)
-* [Overview of Cloud-based TEEs](overview_of_cloud-based_tees)
-* [Criteria](criteria)
-* [Review Process](review_process)
+* [Overview](#overview)
+* [Overview of cloud based TEEs](#overview-of-cloud-based-tees)
+* [Criteria](#criteria)
+* [Review process](#review-process)
 
 ## Overview
 
@@ -25,7 +25,7 @@ In this explainer, we focus on expansion to additional trusted compute environme
 
 This explainer focuses on TEEs whose isolation and integrity guarantees are provided by a CSP. TEEs whose isolation and integrity properties come from other sources (such as private clouds or ad tech data centers) pose additional technical and security challenges, and are out of scope for this explainer and will be considered separately.
 
-## **Overview of Cloud-based TEEs**
+## **Overview of cloud based TEEs**
 
 Data is typically processed in TEEs as follows:
 
@@ -79,7 +79,7 @@ In a competitive marketplace, we expect CSPs to be proactively working on improv
 
 We will provide advance notice if and when requirements are updated.
 
-## Review Process
+## Review process
 
 To initiate a review of a Cloud Service Provider, please file a GitHub issue in [this repository](https://github.com/WICG/protected-auction-services-discussion/issues/) using the template provided in this explainer, and provide all required evidence. We may also independently initiate review processes using the same process, and will document our previous decisions to approve AWS and GCP. 
 
@@ -103,7 +103,6 @@ We will provide advance notice and support for migration if and when solutions a
 | Relevant factors (optional) | For prioritization of review of the Cloud TEE solution and, if approved, enabling support. For example, demand for solutions\*\*. |
 
 \*\* We understand some information may not be public, and we can accommodate alternative ways to provide supporting evidence.
-
 
 
 
