@@ -31,7 +31,7 @@ We will create a positive experience for developers by responding to open issues
 
 *   **Repository structure:** the open source repositories for the servers should be consistent and integrated with tooling (for example, for code indexing and search, continuous integration, continuous build, and so on).
 *   **Community contribution policies:** these should be consistent between servers, especially where they share shared repositories for common components.
-*   **Debugging tools:** these are especially tricky to build for Protected Audience services because of the deliberate limitations of what the servers expose about their running state. We plan to publish separate explainers (for example, [Debugging protected audience API services][1]) on this topic.
+*   **Debugging tools:** these are especially tricky to build for Protected Audience services because of the deliberate limitations of what the servers expose about their running state. We plan to publish separate explainers on this topic (for example, [Debugging protected audience API services][1]).
 
 ### Incident management
 
