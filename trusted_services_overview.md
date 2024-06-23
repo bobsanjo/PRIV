@@ -2,13 +2,6 @@
 
 > FLEDGE has been renamed to Protected Audience API. To learn more about the name change, see the [blog post](https://privacysandbox.com/intl/en_us/news/protected-audience-api-our-new-name-for-fledge)
 
-**Authors:** <br>
-[Priyanka Chatterjee][1], Google Privacy Sandbox<br>
-[Alexandra White][2], Google Chrome<br>
-[Joe Lewis][3], Google Android<br>
-Chanda Patel, Google<br>
-[Peiwen Hu][4], Google Privacy Sandbox
-
 ---
 * [Overview](overview)
 * [Privacy considerations](privacy_considerations)
@@ -33,7 +26,7 @@ services** running in **secure environments**.
 Ad remarketing is one of the primary uses of FLEDGE. Real-time services are
 critical for FLEDGE because:
 
-*   Real-time signals from adtechs are required to serve remarketing ads.
+*   Real-time signals from ad techs are required to serve remarketing ads.
 *   Some computations may be overly-expensive or infeasible to execute on
     client devices. As these computations are necessary, they should be able
     to be offloaded to the cloud, without affecting the speed or privacy of
@@ -47,8 +40,8 @@ services.
 Before reading this document, familiarize yourself with these key terms and
 concepts:
 
-*   **Adtech**: an enterprise company that develops technology to serve ads to
-     users on different mediums. In this context, adtech may refer to:
+*   **Ad tech**: an enterprise company that develops technology to serve ads to
+     users on different mediums. In this context, ad tech may refer to:
     *   **Supply-side platform ("sellers")**: A digital advertising company that
          works with publishers to determine what ads to show in the ad slots
          offered by the publisher.
@@ -137,13 +130,13 @@ privacy considerations:
     enforced by security policies that are attested at service startup.
 *   Logs, core memory dumps, crashes, and stack traces do not reveal sensitive
     information.
-*   Adtechs cannot access decryption keys in cleartext.
+*   Ad techs cannot access decryption keys in cleartext.
 
 ## Trust model
 
 This section describes the trust model for FLEDGE services. In this context,
 trust is based on cryptographic verification by external parties. The model
-is expected to be trusted by all entities, including adtechs and clients.
+is expected to be trusted by all entities, including ad techs and clients.
 
 ![Illustration of the trust model](images/trust-model.png)
 
@@ -173,7 +166,7 @@ The following entities are inherently without trust:
 
 ## System overview
 
-Adtechs can use FLEDGE services to perform several different actions (such as
+Ad techs can use FLEDGE services to perform several different actions (such as
 lookup real-time data as well as executing programmatic bidding and
 auctions). There are several entities that operate together in the systems.
 
@@ -340,9 +333,9 @@ correspond to the version of the public key that is used for encryption.
 Public keys have a client side time-to-live (TTL) of N days. Corresponding
 private keys should have a TTL of at least N+1 days.
 
-#### Adtech authentication by Coordinator
+#### Ad tech authentication by Coordinator
 
-When an adtech onboards to a [cloud platform](#cloud-platform) to [deploy](#deployment-by-adtechs)
+When an ad tech onboards to a [cloud platform](#cloud-platform) to [deploy](#deployment-by-adtechs)
 and operate FLEDGE services, they need to be enrolled with Coordinator. Refer [here][7] for more details.
 
 ## Initial plans for release and deployment
@@ -355,14 +348,14 @@ and operate FLEDGE services, they need to be enrolled with Coordinator. Refer [h
     artifacts to an open source repo in [github.com/privacysandbox](https://github.com/privacysandbox)
     org. Refer [here][8] for the Github code repo of different Privacy Sandbox services.
 
-### Deployment by adtechs
+### Deployment by ad techs
 
-Adtechs will deploy FLEDGE services from an open source repository that follow
+Ad techs will deploy FLEDGE services from an open source repository that follow
 helper guides provided by Google. This includes running binaries of the
-service in the TEE setup specific to a cloud platform. Adtechs are
+service in the TEE setup specific to a cloud platform. Ad techs are
 responsible for the productionization of FLEDGE services operated by them.
 
-Adtechs will define and be responsible for the Service Level Objective (SLO) and  Service
+Ad techs will define and be responsible for the Service Level Objective (SLO) and  Service
 Level Agreement (SLA) of the system deployed by them.
 
 ### Deployment by Coordinators
@@ -374,11 +367,11 @@ is supported.
 ## FLEDGE services
 
 The Privacy Sandbox is proposing the following open source services for FLEDGE
-that run in TEEs and are operated by adtechs.
+that run in TEEs and are operated by ad techs.
 
 ### Key/value services
 
-Lookup service for fetching real-time signals from adtechs. This is a critical
+Lookup service for fetching real-time signals from ad techs. This is a critical
 path dependency for remarketing bidding & auctions. 
 
 Refer to the
