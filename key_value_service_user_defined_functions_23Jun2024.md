@@ -51,9 +51,9 @@ By default, we will load a simple pass-through UDF that will do an internal data
   <tr>
    <td>Language supported
    </td>
-   <td>Javascript, WASM
+   <td>JavaScript, WASM
    </td>
-   <td>WASM support is limited to “inline WASM” initially, where the WASM code must be invoked by a piece of javascript driver code, that is, the UDF entrypoint must still be in javascript.
+   <td>WASM support is limited to “inline WASM” initially, where the WASM code must be invoked by a piece of JavaScript driver code, that is, the UDF entrypoint must still be in JavaScript.
    </td>
   </tr>
   <tr>
@@ -115,7 +115,7 @@ By default, we will load a simple pass-through UDF that will do an internal data
     The code snippet should have the following properties:
 
     *   Language
-        *   Javascript (if desired, Javascript with inline WASM)
+        *   JavaScript (if desired, JavaScript with inline WASM)
     *   UDF handler
         *   The code snippet should contain a UDF handler function that serves
             as the main entry point for execution.
@@ -162,8 +162,8 @@ The generic signature is the following:
 ```
 String myHandlerName(UDFExecutionMetadata arg1, [UDFArgument] args)
 ```
-or the equivalent Javascript:
-```javascript
+or the equivalent JavaScript:
+```JavaScript
 function myHandlerName(executionMetadata, ...udf_arguments) {}
 ```
 
@@ -415,7 +415,7 @@ Example output:
 
 ##### Example PA code snippet
 
-```javascript
+```JavaScript
 function handleRequest(executionMetadata, ...udf_arguments){
     const keyGroupOutputs = getKeyGroupOutputs(
         executionMetadata.requestMetadata.hostname,
@@ -427,7 +427,7 @@ function handleRequest(executionMetadata, ...udf_arguments){
 
 ### Datastore Read API
 
-We expose a read-only API to the datastore that is accessible from within the UDF. A call to `getValues(keys)` returns the key value pairs from the datastore for the given input. It is registered as a regular Javascript function.
+We expose a read-only API to the datastore that is accessible from within the UDF. A call to `getValues(keys)` returns the key value pairs from the datastore for the given input. It is registered as a regular JavaScript function.
 
 
 #### Input
