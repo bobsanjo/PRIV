@@ -138,7 +138,7 @@ This section describes the trust model for FLEDGE services. In this context,
 trust is based on cryptographic verification by external parties. The model
 is expected to be trusted by all entities, including ad techs and clients.
 
-![Illustration of the trust model](images/trust-model.png)
+![Illustration of the trust model](trust-model.png)
 
 ### Root of trust
 
@@ -170,7 +170,7 @@ Ad techs can use FLEDGE services to perform several different actions (such as
 lookup real-time data as well as executing programmatic bidding and
 auctions). There are several entities that operate together in the systems.
 
-![System overview diagram](images/system-overview-final.png)
+![System overview diagram](system-overview-final.png)
 
 *   The [clients](#clients) send encrypted requests to a FLEDGE service. To
     encrypt these requests, the client prefetches and caches the public key
@@ -186,7 +186,7 @@ auctions). There are several entities that operate together in the systems.
 
 ### Clients
 
-![Diagram showing a client prefetching keys from a hosting service](images/fetch-keys.png)
+![Diagram showing a client prefetching keys from a hosting service](fetch-keys.png)
 
 Client software periodically fetches a set of public keys from the public key
 hosting service.
@@ -201,7 +201,7 @@ FLEDGE service.
 
 ### Client-to-service communication
 
-![Diagram showing encrypted request and response](images/encrypt.png)
+![Diagram showing encrypted request and response](encrypt.png)
 
 Client to FLEDGE service communication is encrypted using
 [Bidirectional Hybrid Public Key Encryption (HPKE)](https://www.rfc-editor.org/rfc/rfc9180.html#name-bidirectional-encryption).
@@ -242,7 +242,7 @@ Each FLEDGE service is hosted in a secure virtual machine (TEE). Secure
 virtual machines run on physical hosts powered by secure hardware
 processors. 
 
-![FLEDGE key exchange diagram](images/fledge-keys.png)
+![FLEDGE key exchange diagram](fledge-keys.png)
 
 The FLEDGE service sends requests to the key management system to fetch
 private keys and public keys at service bootstrap. Before such keys are
@@ -274,7 +274,7 @@ of the open source image; this validation process is termed an attestation.
 
 ### Key management systems
 
-![Diagram of key management systems](images/kms.png)
+![Diagram of key management systems](kms.png)
 
 A _key management system_ includes multiple services that are tasked with:
 
