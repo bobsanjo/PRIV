@@ -106,12 +106,12 @@ privacy considerations:
     virtual machine’s guest operating system are externally verifiable.
 *   The FLEDGE services run in a TEE.
 *   Service code, APIs, and configurations are open source and externally
-    verifiable.
-    *   Note: Closed-source proprietary code can run within a TEE. In this
+    verifiable. 
+    *   _Note: Closed-source proprietary code can run within a TEE. In this
         trust model, closed-source proprietary code execution is allowed for
         certain use cases where execution is limited to another sandbox in
         the same TEE that preserves the same privacy considerations and
-        security goals.
+        security goals._
 *   The service code is attested. 
 *   Data sent from the client is not persisted.
 *   Sensitive data will not be exfiltrated out of the service.
@@ -162,7 +162,7 @@ The following entities are inherently without trust:
 *   A client, such as an app or browser.
     * _Note: We no longer expect to need any device attestation as protection for [Bidding & Auction Service][6].
       As the design has evolved, requests to the B&A Service now pass through the existing untrusted seller's ad service, which can perform
-      its own protections from invalid traffic.  Also, Web Environment Integrity is an entirely unrelated effort._
+      its own protections from invalid traffic. Also, Web Environment Integrity is an entirely unrelated effort._
 
 ## System overview
 
