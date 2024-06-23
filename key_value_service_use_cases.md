@@ -25,7 +25,7 @@ according to the scan, meaning the SSP’s auction code could allow the creative
 
 The Key/Value server can be used to store campaign budget strategy such as {full-speed, slow, off} in near real time. When bidding takes place, an ad can check the budget strategy for the 
 ad by doing a lookup of render URL to campaign ID and then using the campaign ID to check for the budget strategy. For example, when the DSP places an ad on the browser, 
-it stores `"campaign": "#123"` in the ad’s metadata in the IG, and also stores "spendrate#123" in the IG’s set of keys. Then, when the computedBid() function is looking over the IG’s ads, 
+it stores "campaign": "#123" in the ad’s metadata in the IG, and also stores "spendrate#123" in the IG’s set of keys. Then, when the `computedBid()` function is looking over the IG’s ads, 
 it checks the key "spendrate"+ad.campaign and finds the value.
 
 The ad server can also use geographical information to return a value that is, say, country specific. For example, there might be different budgets or different policies in different countries, 
