@@ -9,13 +9,17 @@
 
 ## Overview
 
-The Key/Value (KV) server is a TEE-based Key/Value database that can be used to store and integrate user level and campaign level data into Protected Audiences Auctions. It can be used for a variety of use cases, including the ones listed below.
+The Key/Value (KV) server is a TEE-based Key/Value database that can be used to store and integrate user level and campaign level data into Protected Audiences Auctions. 
+It can be used for a variety of use cases, including the ones listed below.
 
 ## Use Cases
 
 ### Real-time creative status retrieval
 
-SSPs can use the Key/Value server for lookup of a previous scan of a creative so they can block ads that violate their policies. When an SSP discovers that an ad violates their policy, they can write to the Key/Value server to indicate that the ad should not be presented. The SSP can then check the creative render URL against the key value in the auction code to identify if the ad is "allowed", "blocked", or of "unknown" status. More generally, the Key/Value response for a creative could include a list of policy categories the ad falls into according to the scan, meaning the SSP’s auction code could allow the creative on some publishers but not others.
+SSPs can use the Key/Value server for lookup of a previous scan of a creative so they can block ads that violate their policies. When an SSP discovers that an ad violates their policy, 
+they can write to the Key/Value server to indicate that the ad should not be presented. The SSP can then check the creative render URL against the key value in the auction code to 
+identify if the ad is "allowed", "blocked", or of "unknown" status. More generally, the Key/Value response for a creative could include a list of policy categories the ad falls into 
+according to the scan, meaning the SSP’s auction code could allow the creative on some publishers but not others.
 
 
 ### Budgeting
