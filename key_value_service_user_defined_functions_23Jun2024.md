@@ -9,7 +9,7 @@
 * [Overview](#overview)
 * [UDF fact sheet](#udf-fact-sheet)
 * [Engage and share feedback](#engage-and-share-feedback)
-* [Running the Key/Value server with a UDF](#running-the-key/value-server-with-a-udf)
+* [Running the Key/Value server with a UDF](#running-the-key\/value-server-with-a-udf)
 * [APIs](#apis)
 
 ## Overview
