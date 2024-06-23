@@ -9,7 +9,7 @@
 
 ## Overview
 
-The Key/Value (KV) server is a TEE-based Key/Value database that can be used to store and integrate user level and campaign level data into Protected Audiences Auctions. It can be used for a variety of use cases, including the ones listed below:
+The Key/Value (KV) server is a TEE-based Key/Value database that can be used to store and integrate user level and campaign level data into Protected Audiences Auctions. It can be used for a variety of use cases, including the ones listed below.
 
 ## Use Cases
 
