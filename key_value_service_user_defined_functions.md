@@ -14,11 +14,13 @@
 
 ## Overview
 
-The Key/Value service is adding support for executing user-defined functions (UDFs). This explainer describes the planned critical user journey and API that will need to be followed to use UDFs in the trusted Key/Value service. 
-An initial version has been added to the [key/value service repo](https://github.com/privacysandbox/fledge-key-value-service) in release 0.9.0.
+The Key/Value service is adding support for executing user-defined functions (UDFs). This explainer describes the planned critical user journey and API that will need to be 
+followed to use UDFs in the trusted Key/Value service. An initial version has been added to the [key/value service repo](https://github.com/privacysandbox/fledge-key-value-service) in release 0.9.0.
 
-The UDF code snippet is loaded through a cloud file storage solution such as the AWS S3 and will be executed when the server receives a [query request](https://github.com/WICG/turtledove/blob/main/FLEDGE_Key_Value_Server_API.md#query-api-version-2).
-Once per [partition](https://github.com/WICG/turtledove/blob/main/FLEDGE_Key_Value_Server_API.md#request-version-20), the request handler invokes the UDF, which can run proprietary computation logic and in addition, has access to a read API provided by the key/value service to query the server’s internal data store, populated by dataset from the service operator.
+The UDF code snippet is loaded through a cloud file storage solution such as the AWS S3 and will be executed when the server receives 
+a [query request](https://github.com/WICG/turtledove/blob/main/FLEDGE_Key_Value_Server_API.md#query-api-version-2). Once per [partition](https://github.com/WICG/turtledove/blob/main/FLEDGE_Key_Value_Server_API.md#request-version-20), 
+the request handler invokes the UDF, which can run proprietary computation logic and in addition, has access to a read API provided by the Key/Value service 
+to query the server’s internal data store, populated by dataset from the service operator.
 
 ![Overview of UDF Flow](images/fledge_kv_udf_flow.png)
 
@@ -32,7 +34,9 @@ The UDF can perform any number of lookup calls to the in-memory Key/Value data s
 The server collects the results of the UDF executions, aggregates them,
 and returns them in the response to the client._</small>
 
-By default, we will load a simple pass-through UDF that will do an internal datastore lookup for the keys and return the values. To override the default UDF, see the [UDF guide](https://github.com/privacysandbox/fledge-key-value-service/blob/main/docs/generating_udf_files.md). For details on the broader trust model, see the [trust model explainer](https://github.com/privacysandbox/fledge-docs/blob/main/key_value_service_trust_model.md#design-principles).
+By default, we will load a simple pass-through UDF that will do an internal datastore lookup for the keys and return the values. To override the default UDF, 
+see the [UDF guide](https://github.com/privacysandbox/fledge-key-value-service/blob/main/docs/generating_udf_files.md). For details on the broader trust model, 
+see the [trust model explainer](https://github.com/privacysandbox/fledge-docs/blob/main/key_value_service_trust_model.md#design-principles).
 
 
 ## UDF fact sheet
@@ -85,7 +89,8 @@ By default, we will load a simple pass-through UDF that will do an internal data
    </td>
    <td>Private
    </td>
-   <td>Code is only known to the service operator. The code is not part of the attestation process in the trust model that requires open sourcing. Privacy constraints of the code execution are upheld by the runtime environment.
+   <td>Code is only known to the service operator. The code is not part of the attestation process in the trust model that requires open sourcing. Privacy constraints of 
+   the code execution are upheld by the runtime environment.
    </td>
   </tr>
 </table>
@@ -93,7 +98,8 @@ By default, we will load a simple pass-through UDF that will do an internal data
 
 ## Engage and share feedback
 
-1.  Examine the APIs proposed in the sections below. Do your use cases require more? Please leave feedback by posting github issues in the [key/value service repo](https://github.com/privacysandbox/fledge-key-value-service/issues).
+1.  Examine the APIs proposed in the sections below. Do your use cases require more? Please leave feedback by posting github issues in 
+the [Key/Value service repo](https://github.com/privacysandbox/fledge-key-value-service/issues).
 
 2.  Provide feedback on the overall capabilities and requirements, such as:
 
@@ -104,7 +110,8 @@ By default, we will load a simple pass-through UDF that will do an internal data
 
 3.  Write your UDF and test it out by following the [steps below](#running-the-key-value-server-with-a-udf).
 
-    The key/value service repo also includes a tool to check the compatibility of UDFs without having to spin up a Key/Value server (see [testing section of the UDF guide](https://github.com/privacysandbox/fledge-key-value-service/blob/main/docs/generating_udf_files.md#3-test-the-udf-delta-file)). 
+    The Key/Value service repo also includes a tool to check the compatibility of UDFs without having to spin up a Key/Value 
+    server (see [testing section of the UDF guide](https://github.com/privacysandbox/fledge-key-value-service/blob/main/docs/generating_udf_files.md#3-test-the-udf-delta-file)). 
     Note that the UDF feature does not yet include trust model enforcements. However, the principles are outlined in the [trust model explainer](https://github.com/privacysandbox/fledge-docs/blob/main/key_value_service_trust_model.md#design-principles) and should be followed to ensure compatibility with the final implementation.
 
 
@@ -175,7 +182,7 @@ String myHandlerName(UDFExecutionMetadata arg1, [String] some_input, [Object] so
 
 ###### Schema definitions:
 
-* [UDFExecutionMetadata](https://github.com/privacysandbox/fledge-key-value-service/blob/main/public/api_schema.proto#L25) contains metadata from the  [GetValuesRequest](https://github.com/privacysandbox/fledge-key-value-service/blob/main/public/query/v2/get_values_v2.proto).
+* [UDFExecutionMetadata](https://github.com/privacysandbox/fledge-key-value-service/blob/main/public/api_schema.proto#L25) contains metadata from the [GetValuesRequest](https://github.com/privacysandbox/fledge-key-value-service/blob/main/public/query/v2/get_values_v2.proto).
 
 ```json
 {
@@ -427,7 +434,8 @@ function handleRequest(executionMetadata, ...udf_arguments){
 
 ### Datastore Read API
 
-We expose a read-only API to the datastore that is accessible from within the UDF. A call to `getValues(keys)` returns the key value pairs from the datastore for the given input. It is registered as a regular JavaScript function.
+We expose a read-only API to the datastore that is accessible from within the UDF. A call to `getValues(keys)` returns the key value pairs from the datastore for the given input. 
+It is registered as a regular JavaScript function.
 
 
 #### Input
