@@ -37,7 +37,7 @@ We will create a positive experience for developers by responding to open issues
 
 We will offer playbooks for service operators and define emergency procedures.
 
-*   **Support structures:** when there is an outage, how can server operators report it for triage and remediation?
+*   **Support structures:** when there is an outage, how can server operators report it for triage and remediation.
 *   **Playbooks:** for server operators there should be a well-defined set of common alerts and how/when to mitigate them.
 *   **Pre-planned mitigations:** a set of responses that are expected to be useful. For example, to roll back to a previous server version or to restore corrupt data.
 
@@ -45,8 +45,8 @@ We will offer playbooks for service operators and define emergency procedures.
 
 We will create a system that meets reliability requirements.
 
-*   **Reliability ranges:** the server operators are responsible for deciding the reliability targets that they are aiming for (for example, uptime). The servers should be able to meet a range of different reliabilities; this is important because often extremely high reliability comes with significant costs.
-*   **Monitoring and alerting:** the ability to detect when servers fail, or stray from reliability targets, is necessary. Without this server operators cannot tell if the servers are performing correctly. See [Monitoring protected audience API services][2] for details.
+*   **Reliability ranges:** the server operators are responsible for deciding the reliability targets that they are aiming for (for example, uptime). The servers should be able to meet a range of different reliabilities. This is important because often extremely high reliability comes with significant costs.
+*   **Monitoring and alerting:** the ability to detect when servers fail, or stray from reliability targets, is necessary. Without this information server operators cannot tell if the servers are performing correctly. See [Monitoring protected audience API services][2] for details.
 *   **Risk management:** past outages will be tracked and documented together with changes that come out of them. This is used to both track system health over time and to make sure that known bugs are corrected.
 *   **Graceful degradation:** when servers are overwhelmed they should be able to shed traffic in a predictable way (while also alerting operators that they are in this state, as above).
 *   **Scale testing:** it is useful to know where the limits of the servers are. For example, how much traffic can one single instance handle before it is overwhelmed.
@@ -55,7 +55,7 @@ We will create a system that meets reliability requirements.
 
 We will provide information as to what resources the server will use and how best to set it up to use it efficiently.
 
-*   **Sensible default deployment configurations:** to make sure that common mistakes are avoided.
+*   **Sensible default deployment configurations:** to ensure that common mistakes are avoided.
 *   **Ongoing benchmarking:** to prevent performance regressions.
 *   **Cost prediction:** to estimate the Cloud costs required to run certain workloads.
 
