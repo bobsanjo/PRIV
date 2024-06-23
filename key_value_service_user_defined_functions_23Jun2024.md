@@ -9,12 +9,12 @@
 * [Overview](#overview)
 * [UDF fact sheet](#udf-fact-sheet)
 * [Engage and share feedback](#engage-and-share-feedback)
-* [Running the Key/Value server with a UDF](#running-the-key\/value-server-with-a-udf)
+* [Running the Key Value server with a UDF](#running-the-key-value-server-with-a-udf)
 * [APIs](#apis)
 
 ## Overview
 
-The Key/Value service is adding support for executing user-defined functions (UDFs). This explainer describes the planned critical user journey and API that will need to be followed to use UDFs in the trusted key/value service. 
+The Key/Value service is adding support for executing user-defined functions (UDFs). This explainer describes the planned critical user journey and API that will need to be followed to use UDFs in the trusted Key/Value service. 
 An initial version has been added to the [key/value service repo](https://github.com/privacysandbox/fledge-key-value-service) in release 0.9.0.
 
 The UDF code snippet is loaded through a cloud file storage solution such as the AWS S3 and will be executed when the server receives a [query request](https://github.com/WICG/turtledove/blob/main/FLEDGE_Key_Value_Server_API.md#query-api-version-2).
@@ -102,13 +102,13 @@ By default, we will load a simple pass-through UDF that will do an internal data
     *   How often do you expect to update your UDF? What is the accepted latency for the code update?
     *   Do you need multiple versions of UDFs to co-exist? What is the use case?
 
-3.  Write your UDF and test it out by following the [steps below](#running-the-key/value-server-with-a-udf).
+3.  Write your UDF and test it out by following the [steps below](#running-the-key-value-server-with-a-udf).
 
     The key/value service repo also includes a tool to check the compatibility of UDFs without having to spin up a Key/Value server (see [testing section of the UDF guide](https://github.com/privacysandbox/fledge-key-value-service/blob/main/docs/generating_udf_files.md#3-test-the-udf-delta-file)). 
     Note that the UDF feature does not yet include trust model enforcements. However, the principles are outlined in the [trust model explainer](https://github.com/privacysandbox/fledge-docs/blob/main/key_value_service_trust_model.md#design-principles) and should be followed to ensure compatibility with the final implementation.
 
 
-## Running the Key/Value server with a UDF
+## Running the Key Value server with a UDF
 
 1.  Write the UDF Code snippet.
 
