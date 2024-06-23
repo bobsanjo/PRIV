@@ -3,13 +3,13 @@
 > FLEDGE has been renamed to Protected Audience API. To learn more about the name change, see the [blog post](https://privacysandbox.com/intl/en_us/news/protected-audience-api-our-new-name-for-fledge)
 
 ---
-* [Overview](overview)
-* [Privacy considerations](privacy_considerations)
-* [Security goals](security_goals)
-* [Trust model](trust_model)
-* [System overview](system_overview)
-* [Initial plans for release and deployment](initial_plans_for_release_and_deployment)
-* [FLEDGE services](fledge_services)
+* [Overview](#overview)
+* [Privacy considerations](#privacy-considerations)
+* [Security goals](#security-goals)
+* [Trust model](#trust-model)
+* [System overview](#system-overview)
+* [Initial plans for release and deployment](#initial-plans-for-release-and-deployment)
+* [FLEDGE services](#fledge-services)
 
 ## Overview
 
