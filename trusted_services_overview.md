@@ -40,7 +40,7 @@ services.
 Before reading this document, familiarize yourself with these key terms and
 concepts:
 
-*   **Ad tech**: an enterprise company that develops technology to serve ads to
+*   **Ad tech**: An enterprise company that develops technology to serve ads to
      users on different mediums. In this context, ad tech may refer to:
     *   **Supply-side platform ("sellers")**: A digital advertising company that
          works with publishers to determine what ads to show in the ad slots
