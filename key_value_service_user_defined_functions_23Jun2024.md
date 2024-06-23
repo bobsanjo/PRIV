@@ -10,7 +10,7 @@
 * [UDF fact sheet](#udf-fact-sheet)
 * [Engage and share feedback](#engage-and-share-feedback)
 * [Running the K/V server with a UDF](#running-the-k/v-server-with-a-UDF)
-* [API](#api)
+* [APIs](#apis)
 
 ## Overview
 
