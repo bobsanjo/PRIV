@@ -1,10 +1,10 @@
 # Protected App Signals egress in Bidding and Auction Services
 
 ---
-* [Overview](overview)
-* [Feature types](feature-types)
-* [Payload wire format](payload-wire-format)
-* [Egress payload wire format](egress-wire-format)
+* [Overview](#overview)
+* [Feature types](#feature-types)
+* [Payload wire format](#payload-wire-format)
+* [Egress payload wire format](#egress-wire-format)
 
 ## Overview
 
@@ -75,7 +75,7 @@ For example, if `size` = `4`, `signed-integer-feature-type` can have a value `[-
 
 **Wire format**
 
-2’s complement representation of the signed integer. The integer will be converted to wire format following little endian byte order.
+2â€™s complement representation of the signed integer. The integer will be converted to wire format following little endian byte order.
 
 Example: If `value` = `-3` and `size`=`4`, wire format will be `1101`
 
