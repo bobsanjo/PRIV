@@ -119,7 +119,10 @@ Wire format of each contained value, right-to-left. For example, if the histogra
 
 The definition of the wire format of a payload is called its _protocol_. Below we describe the first wire format, or protocol version `1`.  The protocol version included in the payload will be set by the platform.
 
-A payload is made up of two parts: a **header** containing metadata information used for serialization and deserialization; and a **body** containing serialized feature values.
+A payload is made up of two parts: 
+
+* **Header**: containing metadata information used for serialization and deserialization.
+* **Body**: containing serialized feature values.
 
 ### Header
 
