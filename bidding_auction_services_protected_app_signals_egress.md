@@ -105,7 +105,7 @@ For example, if `size` = `4`, `bucket-feature-type` can have values which are of
 
 This type can be used to represent an ordered, heterogeneous list of `unsigned-integer-feature-type` and `signed-integer-feature-type` values. 
 
-**Parameters**
+_Parameters:_
 
 *   `size`: unsigned integer indicating the number of fixed size values in the histogram.
 
@@ -146,7 +146,7 @@ The body is `0`-padded. Details of the padding are slightly different for `egres
 *   Example schema version : `2` 
 *   Example max wire size for `egressPayload`: `20` bits
 
-Consider this example schema, feature values and corresponding wire format for each feature type specified the schema:
+Consider this example schema, feature values, and corresponding wire format for each feature type specified the schema:
 
 <table>
   <tr>
@@ -158,7 +158,7 @@ Consider this example schema, feature values and corresponding wire format for e
 <p>
 <strong>(Defined in the schema)</strong>
    </td>
-   <td><strong>Parameters </strong>
+   <td><strong>Parameters</strong>
 <p>
 <strong>(Defined in the schema)</strong>
    </td>
