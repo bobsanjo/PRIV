@@ -1,7 +1,5 @@
 # Key/Value service user-defined functions (UDFs)
 
-**Authors:** Lusa Zhan, Peiwen Hu
-
 > FLEDGE has been renamed to Protected Audience API. To learn more about the name change, see the [blog post](https://privacysandbox.com/intl/en_us/news/protected-audience-api-our-new-name-for-fledge).
 
 ---
@@ -22,7 +20,7 @@ a [query request](https://github.com/WICG/turtledove/blob/main/FLEDGE_Key_Value_
 the request handler invokes the UDF, which can run proprietary computation logic and in addition, has access to a read API provided by the Key/Value service 
 to query the server’s internal data store, populated by dataset from the service operator.
 
-![Overview of UDF Flow](images/fledge_kv_udf_flow.png)
+![Overview of UDF Flow](fledge_kv_udf_flow.png)
 
 
 <small>_The diagram above shows the basic UDF code loading and request flow:
