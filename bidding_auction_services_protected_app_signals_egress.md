@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Feature types](#feature-types)
 * [Payload wire format](#payload-wire-format)
-* [Egress payload wire format](#egress-wire-format)
+* [Egress payload wire format](#egress-payload-wire-format)
 
 ## Overview
 
