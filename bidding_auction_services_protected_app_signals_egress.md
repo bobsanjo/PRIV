@@ -30,11 +30,11 @@ We support two kinds of feature types:
 
 ### Primitive types
 
-These types represent single values: booleans, unsigned integers, and signed integers
+These types represent single values: booleans, unsigned integers, and signed integers.
 
 #### `boolean-feature-type`
 
-This represents a single boolean value
+This represents a single boolean value.
 
 Expected value: `true` or `false`
 
@@ -46,7 +46,7 @@ Expected value: `true` or `false`
 
 This represents a single non-negative integer value.
 
-Parameters:
+_Parameters:_
 
 *   `size`: unsigned integer indicating the number of bits based on the range of values.
 
@@ -64,8 +64,7 @@ Example: If `value` = `5` and `size `= `3`, wire format will be `101`
 
 This type can be used to represent a single positive or negative integer value. 
 
-Parameters:
-
+_Parameters:_
 
 *   `size`: unsigned integer indicating the number of bits based on the range of values.
 
@@ -91,7 +90,7 @@ This type can be used to represent an ordered list of `boolean-feature-type` val
 
 Expected values: list of boolean (`true` or `false`) values
 
-**Parameters**
+_Parameters:_
 
 *   <code>allow-multiple<strong>: </strong></code>indicates whether the bucket can contain multiple <code>true</code> values.
 *   <code>size<strong>: </strong></code>number of values in the bucket.
