@@ -217,7 +217,7 @@ Consider this example schema, feature values and corresponding wire format for e
 </table>
 
 Wire format of the feature values would be: 
-<img src="images/feature-values-wire-format.png" width="80%" alt="Feature values in wire format">
+<img src="feature-values-wire-format.png" width="80%" alt="Feature values in wire format">
 
 ## Egress payload wire format
 
@@ -225,18 +225,18 @@ Wire format of the feature values would be:
 
 Wire format of the feature values + padding would be: 
 
-<img src="images/temporary-unlimited-egress-with-padding.png" width="80%" alt="Wire format for temporaryUnlimitedEgressPayload with padding">
+<img src="temporary-unlimited-egress-with-padding.png" width="80%" alt="Wire format for temporaryUnlimitedEgressPayload with padding">
 
 Wire format of the feature values + padding + header would be:
 
-<img src="images/temporary-unlimited-egress-payload.png" width="80%" alt="Wire format for temporaryUnlimitedEgressPayload with padding and header">
+<img src="temporary-unlimited-egress-payload.png" width="80%" alt="Wire format for temporaryUnlimitedEgressPayload with padding and header">
 
 ### Wire format for <code>EgressPayload</code>:</strong>
 
 Wire format of the feature values + padding would be: 
 
-<img src="images/egress-payload-with-padding.png" width="80%" alt="Wire format for egressPayload with padding">
+<img src="egress-payload-with-padding.png" width="80%" alt="Wire format for egressPayload with padding">
 
 Wire format of the feature values + padding + header would be:
 
-<img src="images/egress-payload.png" width="80%" alt="Wire format for egressPayload with padding">
+<img src="egress-payload.png" width="80%" alt="Wire format for egressPayload with padding">
