@@ -1,7 +1,5 @@
 # Production Operation
 
-**Author:** Akshay Pundle
-
 ## Overview
 
 This explainer reviews the features available in the Protected Audience services and defines the key components for production readiness, so that these services are operable at the desired 
