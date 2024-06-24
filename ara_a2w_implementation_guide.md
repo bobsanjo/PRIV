@@ -6,7 +6,7 @@
 * [Register an app source and web trigger](#register-an-app-source-and-web-trigger)
 * [Register a web source and an app trigger](#register-a-web-source-and-an-app-trigger)
 * [Campaigns that have both app and web potential destinations](#campaigns-that-have-both-app-and-web-potential-destinations)
-* [For apps using Chrome Custom Tabs](for-apps-using-chrome-custom-tabs)
+* [For apps using Chrome Custom Tabs](#for-apps-using-chrome-custom-tabs)
 * [For apps using WebView](#for-apps-using-webView)
 
 
@@ -22,7 +22,7 @@ Cross app and web attribution will only be available if the attribution API is e
 
 The ad tech will need to decide whether to register the source or trigger with the browser or the OS.
 
-- For web only campaigns, ad techs can still register both sources and triggers with Chromeís attribution reporting API or choose to delegate both to the OS.
+- For web only campaigns, ad techs can still register both sources and triggers with Chrome‚Äôs attribution reporting API or choose to delegate both to the OS.
 - For sources that may result in either an app or a web trigger, the ad tech can choose to delegate web source registration to the Android attribution reporting API.
 - Ad techs should avoid registering the source with both the Chrome and Android APIs simultaneously in order to avoid creating duplicate attribution reports.
 - For triggers that may have been driven by app based sources, the ad tech can choose to delegate web trigger registration to the Android attribution reporting API.
@@ -33,13 +33,13 @@ For some campaigns, the source may occur in an app while the trigger would occur
 
 ### Example
 
-A user is reading articles in their favorite news app. They see an ad for cheap flights to Paris and excitedly click to book. The ad tech serving the ad in the news app registers the click source with the Android attribution reporting API. The user is taken to the advertiserís web page in Chrome where they are able to convert. The ad tech on the advertiserís site checks if the OS level API is available, and it is. The ad tech registers the conversion trigger by instructing Chrome to delegate the registration to the OS instead of registering it directly with Chromeís attribution reporting API. The OS-level attribution reporting API is then able to match the app source and web trigger and send out the relevant reports.
+A user is reading articles in their favorite news app. They see an ad for cheap flights to Paris and excitedly click to book. The ad tech serving the ad in the news app registers the click source with the Android attribution reporting API. The user is taken to the advertiser‚Äôs web page in Chrome where they are able to convert. The ad tech on the advertiser‚Äôs site checks if the OS level API is available, and it is. The ad tech registers the conversion trigger by instructing Chrome to delegate the registration to the OS instead of registering it directly with Chrome‚Äôs attribution reporting API. The OS-level attribution reporting API is then able to match the app source and web trigger and send out the relevant reports.
 
 ### Workflow
 
 Following are further details on how to complete each step:
 
-1. The ad tech from the app registers a source with Androidís attribution reporting API with the following adjustments:
+1. The ad tech from the app registers a source with Android‚Äôs attribution reporting API with the following adjustments:
     - To register an app source that is expected to convert on a web site, the Attribution-Reporting-Register-Source response header should include a web destination (eTLD+1) instead of an app destination.
 
 ```
@@ -61,18 +61,18 @@ Attribution-Reporting-Register-Source: {
 - - In some cases, the advertiser may be using multiple measurement providers (e.g., a third-party measurement tool or an analytics tool) via 302 redirect chains. In some cases, the Attribution Reporting API will follow the redirect path specified in the Attribution-Reporting-Redirect header in the background and at the same time the 302 redirect path executes in the foreground for existing navigation requests. These requests will go to the same URL and could result in the third-party measurement provider double counting registrations. In such cases, ad techs can modify redirection behavior to send the Attribution Reporting API registration to an alternative yet deterministic URL.
         - To enable this behavior, ad techs need to include a new HTTP header when responding to a registration request:
             - The header is Attribution-Reporting-Redirect-Config.
-            - The headerís value should be redirect-302-to-well-known.
+            - The header‚Äôs value should be redirect-302-to-well-known.
 
 ```
 "**Attribution-Reporting-Redirect-Config**": "redirect-302-to-well-known"
 ```
 
-**Note:** All subsequent redirects following this header will have .well-known appended to the beginning of the redirect URIís path.
+**Note:** All subsequent redirects following this header will have .well-known appended to the beginning of the redirect URI‚Äôs path.
 
 - - The rest of the source registration process is the same as a standard app-to-app [source registration](https://developer.android.com/design-for-safety/privacy-sandbox/guides/attribution#register-attribution).
     - Note: If you or the publishing app are using webview to show a native ad in an Android app, refer to the section on [webview](#3j2qqm3).
 
-1. The ad tech registers the trigger on the advertiserís website by asking Chrome to delegate the registration to the Android attribution reporting API:
+1. The ad tech registers the trigger on the advertiser‚Äôs website by asking Chrome to delegate the registration to the Android attribution reporting API:
     - Once a user converts on a web site, the ad tech will make a request to register the trigger with Chrome.
         - For an app to web use case, the attribution source parameter must be specified directly, either by using the attributionsrc tag or via javascript registration.
         - Below is an example of using the attributionsrc tag to specify the source parameter:
@@ -82,7 +82,7 @@ Attribution-Reporting-Register-Source: {
   attributionsrc="<https://adtech.example/register-trigger?purchase=12">>
 ```
 
-- - - The Attribution-Reporting-Support request header is returned by Chrome to the ad tech. If the API is enabled on both the Chrome browser and the Android device, the header will return ëos, webí.
+- - - The Attribution-Reporting-Support request header is returned by Chrome to the ad tech. If the API is enabled on both the Chrome browser and the Android device, the header will return ‚Äòos, web‚Äô.
             - Note: The attribution reporting API must be enabled on the Android OS by [configuring AdServices](https://developers.google.com/privacy-sandbox/relevance/setup/android/setup-api-access) and [your device](https://developers.google.com/privacy-sandbox/relevance/setup/android/setup-device-access) to successfully measure across app and web.
 
 ```
@@ -93,7 +93,7 @@ Attribution-Reporting-Register-Source: {
 
 "**Attribution-Reporting-Register-OS-Trigger**": "<https://adtech.example/register-trigger>", "<https://other-adtech.example/register-trigger>"
 
-- - To complete the trigger registration, the ad techís endpoint should respond to the Android attribution reporting API request via the response header.
+- - To complete the trigger registration, the ad tech‚Äôs endpoint should respond to the Android attribution reporting API request via the response header.
 
 ```
 Attribution-Reporting-Register-Trigger {
@@ -125,14 +125,14 @@ For some campaigns, a source may occur on a site in a mobile browser while the t
 
 ### Example
 
-A user is browsing on a site in their Chrome browser on their Android phone. They see an ad for a sweater from one of their favorite stores. They click the ad and are taken to the app they already have downloaded. The ad tech on the website where the ad was served registers the click source by instructing Chrome to delegate the registration to the Android attribution reporting API instead of using Chromeís native attribution reporting API. The user purchases the sweater in the shopping app. The ad tech in the advertiserís app then registers the conversion trigger with the Android attribution reporting API. The OS-level attribution reporting API is able to match the web source and app trigger and send out the relevant reports.
+A user is browsing on a site in their Chrome browser on their Android phone. They see an ad for a sweater from one of their favorite stores. They click the ad and are taken to the app they already have downloaded. The ad tech on the website where the ad was served registers the click source by instructing Chrome to delegate the registration to the Android attribution reporting API instead of using Chrome‚Äôs native attribution reporting API. The user purchases the sweater in the shopping app. The ad tech in the advertiser‚Äôs app then registers the conversion trigger with the Android attribution reporting API. The OS-level attribution reporting API is able to match the web source and app trigger and send out the relevant reports.
 
 ### Workflow
 
 Following are further details on how to complete each step:
 
 1. The ad tech on the publisher website registers the source by instructing Chrome to delegate the registration to the Android attribution reporting API:
-    - The Attribution-Reporting-Support request header is returned by Chrome to the ad tech. If the API is enabled on both the Chrome browser and the Android device, the header will return ëos, webí.
+    - The Attribution-Reporting-Support request header is returned by Chrome to the ad tech. If the API is enabled on both the Chrome browser and the Android device, the header will return ‚Äòos, web‚Äô.
 
 ```  
 "**Attribution-Reporting-Support**": "os, web"
@@ -146,7 +146,7 @@ Following are further details on how to complete each step:
 "**Attribution-Reporting-Register-OS-Source**": "<https://adtech.example/register-source>"
 ```
 
-- - To complete the source registration, the ad techís endpoint should respond to the Android attribution reporting API request with the response header Attribution-Reporting-Register-Source. The response should also specify an app destination in the destination field.
+- - To complete the source registration, the ad tech‚Äôs endpoint should respond to the Android attribution reporting API request with the response header Attribution-Reporting-Register-Source. The response should also specify an app destination in the destination field.
 
 ```
 Attribution-Reporting-Register-Source {
@@ -157,16 +157,16 @@ Attribution-Reporting-Register-Source {
 - - - To support redirects for source registrations, Chrome will follow the redirects and call the [web context APIs](https://developer.android.com/design-for-safety/privacy-sandbox/attribution-app-to-web#changes-apps) for each redirect hop.
     - The remainder of the [source registration](https://developer.android.com/design-for-safety/privacy-sandbox/guides/attribution#register-attribution) remains the same.
 
-1. The ad tech in the advertiserís app registers a trigger with the Android attribution reporting API:
+1. The ad tech in the advertiser‚Äôs app registers a trigger with the Android attribution reporting API:
     - For triggers that occur in apps, the apps [register triggers](https://developer.android.com/design-for-safety/privacy-sandbox/attribution#register-trigger) with the Android attribution reporting API as normal.
 
 ## Campaigns that have both app and web potential destinations
 
 - Setting up dual destinations
-  - Some campaigns may be set up to convert in either the advertiserís app or on the advertiserís web page depending on various factors such as if the user has the app installed.
+  - Some campaigns may be set up to convert in either the advertiser‚Äôs app or on the advertiser‚Äôs web page depending on various factors such as if the user has the app installed.
   - In these cases, both an app and web destination can be specified in the respective parameters
-    - App destination should be in the ìdestinationî field
-    - Web destination should be in the ìweb_destinationî field
+    - App destination should be in the ‚Äúdestination‚Äù field
+    - Web destination should be in the ‚Äúweb_destination‚Äù field
     
 ```    
 Attribution-Reporting-Register-Source {
@@ -224,7 +224,7 @@ Some apps may use WebView to display content. There are a variety of use cases f
 
 - Source and trigger registrations from WebView
   - Ad techs should respond to source registrations using the Attribution-Reporting-Register-OS-Source header. Based on the set behavior for the WebView, this will either registerSource() or registerWebSource() with the OS and initiate a secondary API call from the Android attribution reporting API to the ad tech URI.
-    - To complete the source registration, the ad techís endpoint should respond to the Android attribution reporting API request with the response header.
+    - To complete the source registration, the ad tech‚Äôs endpoint should respond to the Android attribution reporting API request with the response header.
 
 ```
 Attribution-Reporting-Register-OS-Source {
@@ -236,7 +236,7 @@ Attribution-Reporting-Register-OS-Source {
 
 - - - The remainder of the [source registration](https://developer.android.com/design-for-safety/privacy-sandbox/guides/attribution#register-attribution) remains the same.
     - Ad techs should respond to trigger registrations using the Attribution-Reporting-Register-OS-Trigger header. Based on the set behavior for the WebView, this will either registerTrigger() or registerWebTrigger() with the OS and initiate a secondary API call from Rb to the adtech URI.
-      - To complete the trigger registration, the ad techís endpoint should respond to the Android attribution reporting API request with the response header.
+      - To complete the trigger registration, the ad tech‚Äôs endpoint should respond to the Android attribution reporting API request with the response header.
 
 ```
 Attribution-Reporting-Register-OS-Trigger {
