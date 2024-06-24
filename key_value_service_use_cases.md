@@ -1,7 +1,5 @@
 # Key/Value Service Use Cases
 
-**Authors:** Peiwen Hu, Itay Sharfi, Danny Rojas, Arun Nair
-
 ---
 * [Overview](#overview)
 * [Use Cases](#use-cases)
