@@ -58,7 +58,7 @@ For example, if `size `= `3` `unsigned-integer-feature-type` can have a value : 
 
 Binary representation of the unsigned integer. The integer will be converted to wire format following little endian byte order.
 
-Example: If `value` = `5` and `size `= `3`, wire format will be `101`
+Example: If `value` = `5` and `size `= `3`, wire format will be `101`.
 
 #### `signed-integer-feature-type`
 
@@ -76,7 +76,7 @@ For example, if `size` = `4`, `signed-integer-feature-type` can have a value `[-
 
 2’s complement representation of the signed integer. The integer will be converted to wire format following little endian byte order.
 
-Example: If `value` = `-3` and `size`=`4`, wire format will be `1101`
+Example: If `value` = `-3` and `size`=`4`, wire format will be `1101`.
 
 ### Collection types
 
@@ -99,7 +99,7 @@ _Parameters:_
 
 Sequential bit representation of `boolean-feature-type` values.
 
-For example, if `size` = `4`, `bucket-feature-type` can have values which are of the type `boolean-feature-type`. If the `boolean-feature-type` values are [`true`, `false`, `true`, `false`] this will occupy `4` bits on the wire. Wire format will be `0101`
+For example, if `size` = `4`, `bucket-feature-type` can have values which are of the type `boolean-feature-type`. If the `boolean-feature-type` values are [`true`, `false`, `true`, `false`] this will occupy `4` bits on the wire. Wire format will be `0101`.
 
 #### `histogram-feature-type`
 
