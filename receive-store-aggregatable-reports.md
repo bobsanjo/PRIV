@@ -26,13 +26,13 @@ Following are the endpoints per API:
   * Debug `[reporting-origin]/.well-known/attribution-reporting/debug/report-aggregate-attribution`
   * Live `[reporting-origin]/.well-known/attribution-reporting/report-aggregate-attribution`
 
-#### Collection Workflow
+#### Collection and Conversion Workflow
 
 1.  Ad techs will receive the reports in JSON format through a POST call.
 2.  Ad techs will collect these JSON reports and later convert them into AVRO format which is used in Aggregation Service.
 3.  Once converted, the [AVRO reports](https://avro.apache.org/docs/) are stored in the ad tech's cloud storage for later batching.
 
-#### Collection Workflow
+#### Batching Workflow
 
 1.  Once ad tech is ready for batching, ad tech will trigger an aggregation job request through aggregation service.
 2.  Reports are retrieved from the ad tech's cloud storage.
