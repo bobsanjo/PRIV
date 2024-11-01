@@ -5,19 +5,25 @@ refresh_date: 2024-10-24
 description: Deploy and manage this service to produce summary reports for the Attribution Reporting API or the Private Aggregation API.
 keywords: app:AggregationService, docType:LandingPage category:Web, category:Mobile, apiGroupAds
 
-# Receive & Store Aggregatable Reports
+# Receive and Store Aggregatable Reports
+
+[TOC]
+
+## Overview
 
 When ad techs trigger measurement APIs ([Attribution Reporting API](/privacy-sandbox/relevance/attribution-reporting) or [Private Aggregation API](/privacy-sandbox/relevance/private-aggregation)), the encrypted reports are sent from the Chrome browser / client side to the ad tech's reporting endpoint which is a `.well-known` URL with the ad tech's reporting origin. The reporting endpoint is hosted by ad tech to [collect the encrypted reports](https://github.com/privacysandbox/aggregation-service/blob/main/docs/collecting.md).
 
 ![AgS Report Diagram](aggregatable-report-diagram.png)
 
-The following are the endpoints per API:
+### Endpoints
 
-* Private Aggregation
+Following are the endpoints per API:
+
+#### Private Aggregation
   * Debug `[reporting-origin]/.well-known/private-aggregation/debug/report-shared-storage`
   * Live `[reporting-origin]/.well-known/private-aggregation/report-shared-storage` or `/.well-known/private-aggregation/report-protected-audience`
 
-* Attribution Reporting
+#### Attribution Reporting
   * Debug `[reporting-origin]/.well-known/attribution-reporting/debug/report-aggregate-attribution`
   * Live `[reporting-origin]/.well-known/attribution-reporting/report-aggregate-attribution`
 
@@ -25,9 +31,11 @@ Ad techs will receive the reports in JSON format through a POST call. Ad techs w
 
 Once ad tech is ready for batching, ad tech will trigger an aggregation job request through aggregation service where the reports are retrieved from the ad tech's cloud storage. Aggregation Service is hosted on the ad tech's cloud storage and should have an [allow-listed image](https://github.com/privacysandbox/aggregation-service/releases).
 
+### Reports 
+
 Reports received look similar to the following:
 
-**Private Aggregation API**
+#### Private Aggregation API
 
 ```json
   {
@@ -41,7 +49,7 @@ Reports received look similar to the following:
   }
 ```
 
-**Attribution Reporting API**
+#### Attribution Reporting API
 
 ```json
   {
