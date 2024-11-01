@@ -9,7 +9,7 @@ keywords: app:AggregationService, docType:LandingPage category:Web, category:Mob
 
 When ad techs trigger measurement APIs ([Attribution Reporting API](/privacy-sandbox/relevance/attribution-reporting) or [Private Aggregation API](/privacy-sandbox/relevance/private-aggregation)), the encrypted reports are sent from the Chrome browser / client side to the ad tech's reporting endpoint which is a `.well-known` URL with the ad tech's reporting origin. The reporting endpoint is hosted by ad tech to [collect the encrypted reports](https://github.com/privacysandbox/aggregation-service/blob/main/docs/collecting.md).
 
-![AgS Report Diagram](../../assets/images/aggregation-service/aggregatable-report-diagram.png)
+![AgS Report Diagram](aggregatable-report-diagram.png)
 
 The following are the endpoints per API:
 
@@ -162,7 +162,7 @@ The domain file will also need to be in AVRO format using the following schema:
 
 Bucket key should be an hex bytestring of the bucket key. An example for this will be having a key of 1369 in Decimal. When converted to Hex, it will be 559. Then you will need to convert 559 into a bytestring to be added into the output domain AVRO
 
-![AgS Bucket Key Diagram](../../assets/images/aggregation-service/ags-bucket-key-diagram.png)
+![AgS Bucket Key Diagram](ags-bucket-key-diagram.png)
 
 ## Batch reports
 
