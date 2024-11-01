@@ -13,6 +13,8 @@ When ad techs trigger measurement APIs ([Attribution Reporting API](/privacy-san
 
 ![alt text{caption=some caption}(aggregatable-report-diagram.png "AgS Report Diagram")
 
+![example 1{caption=Example caption - AgS Report Diagram}](aggregatable-report-diagram.png)
+
 ### Endpoints
 
 Following are the endpoints per API:
