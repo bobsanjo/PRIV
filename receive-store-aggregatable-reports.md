@@ -26,9 +26,17 @@ Following are the endpoints per API:
   * Debug `[reporting-origin]/.well-known/attribution-reporting/debug/report-aggregate-attribution`
   * Live `[reporting-origin]/.well-known/attribution-reporting/report-aggregate-attribution`
 
-Ad techs will receive the reports in JSON format through a POST call. Ad techs will collect these JSON reports and later convert them into AVRO format which is used in Aggregation Service. Once converted, the [AVRO reports](https://avro.apache.org/docs/) are stored in the ad tech's cloud storage for later batching.
+#### Collection Workflow
 
-Once ad tech is ready for batching, ad tech will trigger an aggregation job request through aggregation service where the reports are retrieved from the ad tech's cloud storage. Aggregation Service is hosted on the ad tech's cloud storage and should have an [allow-listed image](https://github.com/privacysandbox/aggregation-service/releases).
+1.  Ad techs will receive the reports in JSON format through a POST call.
+2.  Ad techs will collect these JSON reports and later convert them into AVRO format which is used in Aggregation Service.
+3.  Once converted, the [AVRO reports](https://avro.apache.org/docs/) are stored in the ad tech's cloud storage for later batching.
+
+#### Collection Workflow
+
+1.  Once ad tech is ready for batching, ad tech will trigger an aggregation job request through aggregation service.
+2.  Reports are retrieved from the ad tech's cloud storage.
+3.  Aggregation Service is hosted on the ad tech's cloud storage and should have an [allow-listed image](https://github.com/privacysandbox/aggregation-service/releases).
 
 ### Reports 
 
@@ -69,9 +77,9 @@ When batching, aggregatable reports need to be in AVRO format. To create an AVRO
 
 A [sample javascript code](https://github.com/privacysandbox/aggregation-service/blob/main/docs/collecting.md#collect-transform-and-batch-reports) is available on the Aggregation Service GitHub repository.
 
-You can have 1 AVRO file for all your reports or split reports into multiple AVRO files. There is no limit on AVRO size. For performance reasons, it is recommended to keep the number of AVRO files to a number between the number of CPUs available for your Cloud instance and 1000.
+You can have one AVRO file for all your reports or split reports into multiple AVRO files. There is no limit on AVRO size. For performance reasons, it is recommended to keep the number of AVRO files to a number between the number of CPUs available for your Cloud instance and 1000.
 
-The following is the AVRO Schema for Aggregatable reports. The different fields for the reports are `payload`, `key_id` and `shared_info`.
+Following is the AVRO Schema for Aggregatable reports. The different fields for the reports are `payload`, `key_id`, and `shared_info`.
 
 ```json
   {
