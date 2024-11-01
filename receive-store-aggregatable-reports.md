@@ -7,13 +7,11 @@ keywords: app:AggregationService, docType:LandingPage category:Web, category:Mob
 
 # Receive and Store Aggregatable Reports
 
-[TOC]
-
 ## Overview
 
 When ad techs trigger measurement APIs ([Attribution Reporting API](/privacy-sandbox/relevance/attribution-reporting) or [Private Aggregation API](/privacy-sandbox/relevance/private-aggregation)), the encrypted reports are sent from the Chrome browser / client side to the ad tech's reporting endpoint which is a `.well-known` URL with the ad tech's reporting origin. The reporting endpoint is hosted by ad tech to [collect the encrypted reports](https://github.com/privacysandbox/aggregation-service/blob/main/docs/collecting.md).
 
-![AgS Report Diagram](aggregatable-report-diagram.png)
+![AgS Report Diagram](aggregatable-report-diagram.png "AgS Report Diagram")
 
 ### Endpoints
 
