@@ -26,6 +26,8 @@ Following are the endpoints per API:
   * Debug `[reporting-origin]/.well-known/attribution-reporting/debug/report-aggregate-attribution`
   * Live `[reporting-origin]/.well-known/attribution-reporting/report-aggregate-attribution`
 
+### Workflows
+
 #### Collection and Conversion Workflow
 
 1.  Ad techs will receive the reports in JSON format through a POST call.
