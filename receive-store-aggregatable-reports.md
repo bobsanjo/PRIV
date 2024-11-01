@@ -167,9 +167,9 @@ The domain file will also need to be in AVRO format using the following schema:
 
 ### Bucket Key
 
-Bucket key should be an hex bytestring of the bucket key. An example for this will be having a key of 1369 in Decimal. When converted to Hex, it will be 559. Then you will need to convert 559 into a bytestring to be added into the output domain AVRO
+Bucket key should be an hex bytestring of the bucket key. An example for this will be having a key of `1369` in Decimal. When converted to Hex, it will be `559`. Then you will need to convert `559` into a bytestring to be added into the output domain AVRO.
 
-![AgS Bucket Key Diagram](ags-bucket-key-diagram.png "AgS Bucket Key Diagram")
+![AgS Bucket Key Diagram](ags-bucket-key-diagram.png "Fig. 2. AgS Bucket Key Diagram")
 
 ## Batch reports
 
