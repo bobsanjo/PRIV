@@ -9,7 +9,7 @@ keywords: app:AggregationService, docType:LandingPage category:Web, category:Mob
 
 ## Overview
 
-When ad techs trigger measurement APIs ([Attribution Reporting API](/privacy-sandbox/relevance/attribution-reporting) or [Private Aggregation API](/privacy-sandbox/relevance/private-aggregation)), the encrypted reports are sent from the Chrome browser / client side to the ad tech's reporting endpoint which is a `.well-known` URL with the ad tech's reporting origin. The reporting endpoint is hosted by ad tech to [collect the encrypted reports](https://github.com/privacysandbox/aggregation-service/blob/main/docs/collecting.md).
+When ad techs trigger measurement APIs ([Attribution Reporting API](/privacy-sandbox/relevance/attribution-reporting) or [Private Aggregation API](/privacy-sandbox/relevance/private-aggregation)), the encrypted reports are sent from the Chrome browser / client side to the ad tech's reporting endpoint, which is a `.well-known` URL with the ad tech's reporting origin. The reporting endpoint is hosted by ad tech to [collect the encrypted reports](https://github.com/privacysandbox/aggregation-service/blob/main/docs/collecting.md).
 
 <figure id = "image-1">
   <img src = "aggregatable-report-diagram.png"
@@ -17,7 +17,6 @@ When ad techs trigger measurement APIs ([Attribution Reporting API](/privacy-san
   alt = "Fig. 1 - AgS Report Diagram">
   <figcaption><b>Figure 1. </b>AgS Report Diagram</figcaption>
 </figure>
-
 
 ### Endpoints
 
@@ -197,9 +196,9 @@ Bucket key should be an hex bytestring of the bucket key. An example for this wi
   <figcaption><b>Figure 2. </b>AgS Bucket Key Diagram</figcaption>
 </figure>
 
-## Batch reports
+## Batch Reports
 
-To understand more about privacy budgets and batching, go to the [batching strategies](/privacy-sandbox/private-advertising/aggregation-service/batch-strategies) doc. Also, keep in mind that an aggregatable report can only be batched within a certain period of time. A report shouldn't exceed the [MAX_REPORT_AGE](https://github.com/privacysandbox/aggregation-service/blob/941d295bafab053412207dea68a941228c53d2ff/java/com/google/aggregate/adtech/worker/model/SharedInfo.java#L61) between the `scheduled_report_time` and the batch run date (currently 90 days).
+To understand more about privacy budgets and batching, see the [batching strategies](/privacy-sandbox/private-advertising/aggregation-service/batch-strategies) documnet. Note that an aggregatable report can only be batched within a certain period of time. A report should not exceed the [MAX_REPORT_AGE](https://github.com/privacysandbox/aggregation-service/blob/941d295bafab053412207dea68a941228c53d2ff/java/com/google/aggregate/adtech/worker/model/SharedInfo.java#L61) between the `scheduled_report_time` and the `batch run date` (currently 90 days).
 
 ## Summary Reports
 
@@ -207,7 +206,7 @@ After batching, Aggregation Service creates the summary report in AVRO format. T
 
 The summary report will be located in the `output_data_blob_prefix` in the `output_data_bucket_name` bucket stated in the `createJob` request.
 
-For Aggregation Service batches where debug_run is enabled, it creates two reports. The summary report and the debug summary report. The debug summary report will be located in the `output_data_blob_prefix/debug` folder.
+For Aggregation Service batches where debug_run is enabled, two reports are created: the summary report and the debug summary report. The debug summary report will be located in the `output_data_blob_prefix/debug` folder.
 
 The debug report generated uses the `debug_results.avsc` schema.
 
@@ -270,7 +269,7 @@ Both summary and debug report will be named as `[output_data_blob_prefix]-1-of-1
   }
 ```
 
-Once converted, your summary report will look like the example `results.json`. When debug_run is enabled, the debug summary report returns something similar to example `debug_results.json`.
+Once converted, your summary report will look like the `results.json` example. When debug_run is enabled, the debug summary report returns something similar to the `debug_results.json` example.
 
 ### results.json (example)
 
