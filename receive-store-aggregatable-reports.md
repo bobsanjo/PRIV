@@ -84,9 +84,15 @@ When batching, aggregatable reports need to be in AVRO format. To create an AVRO
 
 A [sample javascript code](https://github.com/privacysandbox/aggregation-service/blob/main/docs/collecting.md#collect-transform-and-batch-reports) is available on the Aggregation Service GitHub repository.
 
-You can have one AVRO file for all your reports or split reports into multiple AVRO files. There is no limit on AVRO size. For performance reasons, it is recommended to keep the number of AVRO files to a number between the number of CPUs available for your Cloud instance and 1000.
+Note the following: 
+* You can have one AVRO file for all your reports or split reports into multiple AVRO files.
+* There is no limit on AVRO size.
+* For performance reasons, it is recommended to keep the number of AVRO files to a number between the number of CPUs available for your Cloud instance and 1000.
 
-Following is the AVRO Schema for Aggregatable reports. The different fields for the reports are `payload`, `key_id`, and `shared_info`.
+Following is the AVRO Schema for aggregatable reports. The fields for the reports are:
+* `payload`
+* `key_id`
+* `shared_info`
 
 ```json
   {
